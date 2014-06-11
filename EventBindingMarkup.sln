@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30516.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F52B11B7-B340-4C73-9785-68CA8DC3008E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample", "src\Sample\Sample.csproj", "{8374D454-668D-49C9-B2B5-50A6D5C84A24}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventBinding", "src\EventBinding\EventBinding.csproj", "{930F1148-584E-44E2-AB79-E2A6822067CB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8374D454-668D-49C9-B2B5-50A6D5C84A24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8374D454-668D-49C9-B2B5-50A6D5C84A24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8374D454-668D-49C9-B2B5-50A6D5C84A24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8374D454-668D-49C9-B2B5-50A6D5C84A24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{930F1148-584E-44E2-AB79-E2A6822067CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{930F1148-584E-44E2-AB79-E2A6822067CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{930F1148-584E-44E2-AB79-E2A6822067CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{930F1148-584E-44E2-AB79-E2A6822067CB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8374D454-668D-49C9-B2B5-50A6D5C84A24} = {F52B11B7-B340-4C73-9785-68CA8DC3008E}
+		{930F1148-584E-44E2-AB79-E2A6822067CB} = {F52B11B7-B340-4C73-9785-68CA8DC3008E}
+	EndGlobalSection
+EndGlobal
