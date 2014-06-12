@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample", "src\Sample\Sample
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventBinding", "src\EventBinding\EventBinding.csproj", "{930F1148-584E-44E2-AB79-E2A6822067CB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventBinding.Tests", "src\EventBinding.Tests\EventBinding.Tests.csproj", "{C02ABE7A-4758-4868-8067-A79CA3A235EE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{930F1148-584E-44E2-AB79-E2A6822067CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{930F1148-584E-44E2-AB79-E2A6822067CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{930F1148-584E-44E2-AB79-E2A6822067CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C02ABE7A-4758-4868-8067-A79CA3A235EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C02ABE7A-4758-4868-8067-A79CA3A235EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C02ABE7A-4758-4868-8067-A79CA3A235EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C02ABE7A-4758-4868-8067-A79CA3A235EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -30,5 +36,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{8374D454-668D-49C9-B2B5-50A6D5C84A24} = {F52B11B7-B340-4C73-9785-68CA8DC3008E}
 		{930F1148-584E-44E2-AB79-E2A6822067CB} = {F52B11B7-B340-4C73-9785-68CA8DC3008E}
+		{C02ABE7A-4758-4868-8067-A79CA3A235EE} = {F52B11B7-B340-4C73-9785-68CA8DC3008E}
 	EndGlobalSection
 EndGlobal
