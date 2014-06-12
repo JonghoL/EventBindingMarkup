@@ -87,7 +87,14 @@ namespace EventBinding
             gen.Emit(OpCodes.Ldarg, 0);
             gen.Emit(OpCodes.Ldarg, 1);
             gen.Emit(OpCodes.Ldstr, cmdName);
-            gen.Emit(OpCodes.Ldstr, CommandParameter ?? string.Empty);
+            if (CommandParameter == null)
+            {
+                gen.Emit(OpCodes.Ldnull);
+            }
+            else
+            {
+                gen.Emit(OpCodes.Ldstr, CommandParameter);
+            }
             gen.Emit(OpCodes.Call, getMethod);
             gen.Emit(OpCodes.Ret);
 
@@ -95,6 +102,11 @@ namespace EventBinding
         }
 
         static readonly MethodInfo getMethod = typeof(EventBindingExtension).GetMethod("HandlerIntern", new Type[] { typeof(object), typeof(object), typeof(string), typeof(string) });
+
+        static void Handler(object sender, object args)
+        {
+            HandlerIntern(sender, args, "cmd", null);
+        }
 
         public static void HandlerIntern(object sender, object args, string cmdName, string commandParameter)
         {
@@ -142,11 +154,10 @@ namespace EventBinding
                     ret = args;
                     break;
                 case "$this":
-                    if (classify.Length > 1)
-                    {
-                        ret = FollowPropertyPath(target, commandParameter.Replace("$this.", ""), target.GetType());
-                    }
-                    else { ret = target; }
+                    ret = classify.Length > 1 ? FollowPropertyPath(target, commandParameter.Replace("$this.", ""), target.GetType()) : target;
+                    break;
+                default:
+                    ret = commandParameter;
                     break;
             }
 
