@@ -102,7 +102,11 @@ namespace EventBinding
             if (fe != null)
             {
                 ICommand cmd = GetCommand(fe, cmdName);
-                object commandParam = string.IsNullOrWhiteSpace(commandParameter) ? args : commandParameter;
+                object commandParam = null;
+                if (!string.IsNullOrWhiteSpace(commandParameter))
+                {
+                    commandParam = GetCommandParameter(fe, args, commandParameter);
+                }
                 if ((cmd != null) && cmd.CanExecute(commandParam))
                 {
                     cmd.Execute(commandParam);
@@ -128,6 +132,27 @@ namespace EventBinding
             return null;
         }
 
+        internal static object GetCommandParameter(FrameworkElement target, object args, string commandParameter)
+        {
+            object ret = null;
+            var classify = commandParameter.Split('.');
+            switch (classify[0])
+            {
+                case "$e":
+                    ret = args;
+                    break;
+                case "$this":
+                    if (classify.Length > 1)
+                    {
+                        ret = FollowPropertyPath(target, commandParameter.Replace("$this.", ""), target.GetType());
+                    }
+                    else { ret = target; }
+                    break;
+            }
+
+            return ret;
+        }
+
         internal static ViewModelBase FindViewModel(FrameworkElement target)
         {
             if (target == null) return null;
@@ -138,6 +163,19 @@ namespace EventBinding
             var parent = target.GetParentObject() as FrameworkElement;
 
             return FindViewModel(parent);
+        }
+
+        internal static object FollowPropertyPath(object value, string path, Type valueType = null)
+        {
+            Type currentType = valueType ?? value.GetType();
+
+            foreach (string propertyName in path.Split('.'))
+            {
+                PropertyInfo property = currentType.GetProperty(propertyName);
+                value = property.GetValue(value);
+                currentType = property.PropertyType;
+            }
+            return value;
         }
     }
 }

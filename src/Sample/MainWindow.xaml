@@ -16,6 +16,8 @@
             <Rectangle Fill="OrangeRed" Width="50" Height="50" MouseDown="{eb:EventBinding}"/>
             <Rectangle Fill="LimeGreen" Width="50" Height="50" MouseDown="{eb:EventBinding CommandParameter=green}"/>
             <Rectangle Fill="DeepSkyBlue" Width="50" Height="50" MouseDown="{eb:EventBinding Command=MouseDownCommand, CommandParameter=blue}"/>
+            <Rectangle Fill="DeepSkyBlue" Width="50" Height="50" MouseDown="{eb:EventBinding Command=MouseDownCommand, CommandParameter=$e}"/>
+            <Rectangle Fill="DeepSkyBlue" Width="50" Height="50" MouseDown="{eb:EventBinding Command=MouseDownCommand, CommandParameter=$this.Fill}"/>
         </StackPanel>
     </Grid>
 </Window>
