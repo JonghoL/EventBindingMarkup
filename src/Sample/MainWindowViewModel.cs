@@ -29,6 +29,7 @@ namespace Sample
 
         void OnMouseDown(object args)
         {
+            if (args == null) args = "null";
             MessageBox.Show(args.ToString());
         }
 

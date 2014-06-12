@@ -165,17 +165,22 @@ namespace EventBinding
             return FindViewModel(parent);
         }
 
-        internal static object FollowPropertyPath(object value, string path, Type valueType = null)
+        internal static object FollowPropertyPath(object target, string path, Type valueType = null)
         {
-            Type currentType = valueType ?? value.GetType();
+            if (target == null) throw new ArgumentNullException("target null");
+            if (path == null) throw new ArgumentNullException("path null");
+
+            Type currentType = valueType ?? target.GetType();
 
             foreach (string propertyName in path.Split('.'))
             {
                 PropertyInfo property = currentType.GetProperty(propertyName);
-                value = property.GetValue(value);
+                if (property == null) throw new NullReferenceException("property null");
+
+                target = property.GetValue(target);
                 currentType = property.PropertyType;
             }
-            return value;
+            return target;
         }
     }
 }

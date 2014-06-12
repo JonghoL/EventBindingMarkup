@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:eb="clr-namespace:EventBinding;assembly=EventBinding"
         Title="Window1" Height="300" Width="300">
-    <Grid SizeChanged="{eb:EventBinding}">
+    <Grid SizeChanged="{eb:EventBinding CommandParameter=$e}">
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
