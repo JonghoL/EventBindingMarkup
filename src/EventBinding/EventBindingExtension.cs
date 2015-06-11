@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Reflection.Emit;
 using System.Windows.Input;
 using System.Windows.Markup;
@@ -164,11 +165,11 @@ namespace EventBinding
             return ret;
         }
 
-        internal static ViewModelBase FindViewModel(FrameworkElement target)
+        internal static INotifyPropertyChanged FindViewModel(FrameworkElement target)
         {
             if (target == null) return null;
 
-            var vm = target.DataContext as ViewModelBase;
+            var vm = target.DataContext as INotifyPropertyChanged;
             if (vm != null) return vm;
 
             var parent = target.GetParentObject() as FrameworkElement;

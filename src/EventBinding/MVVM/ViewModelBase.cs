@@ -6,14 +6,14 @@ namespace EventBinding.MVVM
     {
         public virtual void Init() { }
 
-        protected DelegateCommnad CreateCommand(Action<object> executeMethod)
+        protected DelegateCommand CreateCommand(Action<object> executeMethod)
         {
             return CreateCommand(executeMethod, (o) => true);
         }
 
-        protected DelegateCommnad CreateCommand(Action<object> executeMethod, Func<object, bool> canExecuteMethod)
+        protected DelegateCommand CreateCommand(Action<object> executeMethod, Func<object, bool> canExecuteMethod)
         {
-            return new DelegateCommnad(executeMethod, canExecuteMethod);
+            return new DelegateCommand(executeMethod, canExecuteMethod);
         }
     }
 

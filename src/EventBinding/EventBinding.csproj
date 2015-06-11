@@ -45,7 +45,7 @@
   <ItemGroup>
     <Compile Include="EventBindingExtension.cs" />
     <Compile Include="MVVM\BindableBase.cs" />
-    <Compile Include="MVVM\DelegateCommnad.cs" />
+    <Compile Include="MVVM\DelegateCommand.cs" />
     <Compile Include="MVVM\DependencyObjectExtensions.cs" />
     <Compile Include="MVVM\ViewModelBase.cs" />
     <Compile Include="MVVM\WeakEventHandlerManager.cs" />

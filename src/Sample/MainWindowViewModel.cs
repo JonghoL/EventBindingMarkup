@@ -18,8 +18,8 @@ namespace Sample
             set { SetProperty(ref _currentWidth, value); }
         }
 
-        public DelegateCommnad MouseDownCommand { get; set; }
-        public DelegateCommnad SizeChangedCommand { get; set; }
+        public DelegateCommand MouseDownCommand { get; set; }
+        public DelegateCommand SizeChangedCommand { get; set; }
 
         public override void Init()
         {

@@ -5,14 +5,14 @@ using System.Windows.Input;
 
 namespace EventBinding.MVVM
 {
-    public sealed class DelegateCommnad : ICommand
+    public sealed class DelegateCommand : ICommand
     {
         private List<WeakReference> _canExcuteChangeHandlers;
 
         private readonly Func<object, Task> _excutedMethod;
         private readonly Func<object, bool> _canExcuteMethod;
 
-        public DelegateCommnad(Action<object> excuteMethod, Func<object, bool> canExecuteMethod )
+        public DelegateCommand(Action<object> excuteMethod, Func<object, bool> canExecuteMethod )
         {
             if(excuteMethod == null || canExecuteMethod == null)
                 throw  new ArgumentNullException();
@@ -26,7 +26,7 @@ namespace EventBinding.MVVM
 
         }
 
-        public DelegateCommnad(Func<object, Task> excuteMethod, Func<object, bool> canExecuteMethod)
+        public DelegateCommand(Func<object, Task> excuteMethod, Func<object, bool> canExecuteMethod)
         {
             if (excuteMethod == null || canExecuteMethod == null)
                 throw new ArgumentNullException();
