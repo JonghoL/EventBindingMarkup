@@ -14,5 +14,10 @@ Markup Extensions for Events (WPF 4.5)
  3. string
 
 
-    
-![](src/Images/viewmodel.png)
+<img src="https://raw.githubusercontent.com/JonghoL/EventBindingMarkup/master/src/Images/viewmodel.png" width="532" height="480">
+
+
+
+## License
+
+See the [LICENSE](LICENSE.md) file for license rights and limitations (MIT).
