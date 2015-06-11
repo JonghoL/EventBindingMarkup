@@ -165,11 +165,11 @@ namespace EventBinding
             return ret;
         }
 
-        internal static INotifyPropertyChanged FindViewModel(FrameworkElement target)
+        internal static ViewModelBase FindViewModel(FrameworkElement target)
         {
             if (target == null) return null;
 
-            var vm = target.DataContext as INotifyPropertyChanged;
+            var vm = target.DataContext as ViewModelBase;
             if (vm != null) return vm;
 
             var parent = target.GetParentObject() as FrameworkElement;
